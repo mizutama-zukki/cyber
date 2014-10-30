@@ -1,0 +1,40 @@
+= include_gon
+= stylesheet_link_tag 'story_game', media:'all'
+= javascript_include_tag 'enchant'
+
+#read_text
+
+#game 
+  /! ←このidはCSSに対応すれば何でも良い
+  #enchant-stage style="width:100%;height:650px"
+
+script src="/assets/story-enchant.js"
+script src="/assets/story_jquery.js"
+
+#programArea
+  /! Dropエリア
+  #dropArea.panel.panel-info
+    .panel-heading
+      strong style="font-size:25px"  エディターエリア
+
+    .panel-body
+      button#activateCode.btn-primary 実行
+      input.btn-primary onClick="programEnd()" type="button" value="終了"
+      input.btn-primary onClick="debugClear()" type="button" value="クリア"
+      br
+        | ここにブロックを持ってきます
+        #drop-check
+          ul#sort-drop-area
+            /! ここにブロックがくる
+  /! ここまでDropエリア
+  /! Dragエリア
+  #dragArea.panel.panel-info
+    .panel-heading
+      strong style="font-size:25px"  ブロックエリア
+    br
+    ul
+      - @blocks.each do |block|
+        li.panel.panel-info id="block_#{block.id}" type="hidden" value="#{block.id}"
+          | #{block.name}
+  /! ここまでDragエリア
+

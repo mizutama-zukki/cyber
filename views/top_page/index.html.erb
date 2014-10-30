@@ -1,0 +1,36 @@
+<link data-turbolinks-track="true" href="/assets/index.css">
+<script data-turbolinks-track="true"src="/assets/jquery/jquery-1.7.2.js"></script>
+
+<%= stylesheet_link_tag "application", media: "all",
+                                       "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag "top_page",media:'all',"data-turbolinks-track"=>true %>
+<div id="stage_buttons" style="bottom:7%;left:5%;position:absolute">
+</div>
+
+<div class="btn btn-primary btn-lg" style="bottom:10%;right:10%;position:absolute">
+  <%= image_tag('mapImg/enchant.png',:size=>"100x100")%>
+   プロフィール表示
+</div>
+
+<script>
+  for(var i=1;i<=10;i++){
+    if(i <= <%= current_user.stage%>){
+      $("#stage_buttons").append($("<button>ステージ"+i+"</button>").attr("class", "btn btn-info btn-lg").attr("style", "display:inline").attr("onClick", "goToGameWindow("+i+")"));  
+      if(i%5==0){
+        $("#stage_buttons").append("<br><br>");  
+      }else{
+        $("#stage_buttons").append("&nbsp;&nbsp;&nbsp;");  
+      }
+    }else{
+      $("#stage_buttons").append($("<button>ステージ"+i+"</button>").attr("class", "btn btn-lg").attr("style", "display:inline"));  
+      if(i%5==0){
+        $("#stage_buttons").append("<br><br>");  
+      }else{
+        $("#stage_buttons").append("&nbsp;&nbsp;&nbsp;");  
+      }
+    }
+  }
+function goToGameWindow(num){
+  location.href = "/storyGame?stageNum=" + num;
+}
+</script>

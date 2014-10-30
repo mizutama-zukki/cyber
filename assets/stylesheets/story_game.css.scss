@@ -1,0 +1,72 @@
+// Place all the styles related to the storyGame controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+  background-color:gray;
+}
+
+#game{
+  width:60%;
+  height:70%;
+  padding: 20px;
+  color: #fff;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  background: #6495ed;
+  float:left;
+}
+
+#enchant-stage{
+  width:600px;
+}
+
+#programArea{
+  width:40%;
+  float:right;
+}
+ 
+/* divのfloatの解除用 */
+.clear {
+  clear:both; 
+}
+ 
+/* 右枠・ドラッグ枠 */
+#dragArea {
+  height:50%;
+}
+
+/* 左枠・ドロップ枠 */
+#dropArea {
+  height:50%;
+}
+ 
+.panel{
+  margin-bottom: 0px;
+}
+/* 左枠・ドロップ枠 */
+#dropArea ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+ 
+#dropArea li {
+    margin: 5px;
+    padding: 10px;
+}
+ 
+#sort-drop-area {
+    padding: 5px 0;
+    border: 1px dashed #0099FF;
+    border-radius: 10px;
+    border-width: 3px;
+}
+
+#dragArea li {
+  padding:5px;
+  list-style-type: none;
+}
+#dragArea ul {
+  padding:5px;
+}
